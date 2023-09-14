@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device, initial-scale=1.0">
+        <style>
+            body{
+                background-image: url('b.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            img{
+                max-width: 200px;
+                max-height: 500px;
+            }
+            video{
+                max-width: 400px;
+                max-height: 300px;
+            }
+            ul{
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: blue;
+            }
+            li{
+                float: left;
+            }
+            li a {
+                display: block;
+                color:antiquewhite;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+            li a:hover{
+                background-color: blueviolet;
+            }
+            .button{
+                top:50%;
+                left: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <ul class="navbar">
+            <li><a href="page2.html">Events</a></li>
+            <li><a>Games</a></li>
+            <li><a>About</a></li>
+            <li style="float:right"><a>Exit</a></li>
+        </ul>
+
+        <div class="imgcontainer"><center>
+            <img src="1.jpeg" alt="1" id="isa" name="isa">
+            <button onclick="changeimage()" id="changeimage">Change Game</button>
+            <img src="2.jpg" alt="2" id="dalawa" name="dalawa">
+            <button onclick="changeimage() " id="changeimage">Change Game</button>
+            <img src="3.jpg" alt="3" id="tatlo" name="tatlo">
+            <button onclick="changeimage()" id="changeimage">Change Game</button>
+        </center></div>
+
+        <div class="vidcontainer"><center>
+            <iframe width="400" height="250" src="https://www.youtube.com/embed/lMx4iLp-EAc?si=etChTDyzsboATBeO" id="vid1" name="vid1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <button onclick="changevideo()">Change Game</button>
+            <iframe width="400" height="250" src="https://www.youtube.com/embed/qX_Gon3dDuk?si=72wLYbBcCO5CG7bL" id="vid2" name="vid2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <button onclick="changevideo()">Change Game</button>
+            <iframe width="400" height="250" src="https://www.youtube.com/embed/XCkvp2btq9o?si=O8-M28P1GeZwkXT8" id="vid3" name="vid3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
+            <button onclick="changevideo()">Change Game</button>
+        </center></div>
+
+        <script>
+            const image = document.getElementById('isa','dalawa','tatlo');
+            const button = document.getElementById('changeimage');
+
+            const imagesrc = ['4.jpg','5.jpg','6.jpg'];
+            let currentindex = 0;
+
+            button.addEventListener("click", function(){
+                currentindex = (currentindex + 1)% imagesrc.length;
+                image.src = imagesrc[currentindex];
+            });
+            const video = document.getElementById('vid1','vid2','vid3');
+            const button1 = document.getElementById('changevideo');
+
+            const vidsrc = ['4.vid','5.vid','6.vid'];
+            let currentindex1 = 0;
+
+            button1.addEventListener("click", function(){
+                currentindex1 = (currentindex1 + 1)% vidsrc.length;
+                video.src = vidsrc[currentindex1];
+            });
+
+        </script>
+    </body>
+</html>
